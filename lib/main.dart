@@ -17,11 +17,14 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => ContactCubit()
         ..createDatabase(),
-      child: const MaterialApp(
+      child:  MaterialApp(
         title: AppStrings.appName,
+        theme: ThemeData(
+          useMaterial3: false,
+        ),
         debugShowCheckedModeBanner: false,
         onGenerateRoute:AppRoutes.onGenerateRoute,
-        home:  HomeScreen(),
+        home:  const HomeScreen(),
       ),
     );
   }
